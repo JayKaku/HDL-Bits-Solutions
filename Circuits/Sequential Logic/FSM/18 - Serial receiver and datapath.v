@@ -57,6 +57,20 @@ module top_module(
             S8: data[7] <= in;
         endcase
     end
+
+    // Aliter
+    // always @(posedge clk) begin
+    //     case(next_state)
+    //         S1: data <= {in, data[7:1]};
+    //         S2: data <= {in, data[7:1]};
+    //         S3: data <= {in, data[7:1]};
+    //         S4: data <= {in, data[7:1]};
+    //         S5: data <= {in, data[7:1]};
+    //         S6: data <= {in, data[7:1]};
+    //         S7: data <= {in, data[7:1]};
+    //         S8: data <= {in, data[7:1]};
+    //     endcase
+    // end
     
      assign out_byte = (state == STOP) ? data : 8'bx;
 
